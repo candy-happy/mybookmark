@@ -587,7 +587,9 @@
                 const response = await fetch(REMOTE_JSON_URL, { cache: 'no-cache' });
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 const data = await response.json();
-                const content = atob(data.content);
+                // 修复中文乱码：正确解码 UTF-8 Base64
+                const binaryString = atob(data.content);
+                const content = decodeURIComponent(escape(binaryString));
                 const raw = JSON.parse(content);
                 const adapted = adaptRemoteData(raw);
                 categories = adapted.categories;
