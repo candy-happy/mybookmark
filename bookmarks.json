@@ -1,0 +1,319 @@
+{
+  "categories": [
+    {
+      "id": "__default__",
+      "name": "未分类",
+      "color": "#9ca3af",
+      "isDefault": true
+    },
+    {
+      "id": "cat_learn",
+      "name": "学习平台",
+      "color": "#22c55e"
+    },
+    {
+      "id": "cat_entertain",
+      "name": "影音娱乐",
+      "color": "#eab308"
+    },
+    {
+      "id": "cat_social",
+      "name": "社交资讯",
+      "color": "#f97316"
+    },
+    {
+      "id": "id_1779106527912_w0adbkuab",
+      "name": "懒人效率站",
+      "color": "#eab308"
+    },
+    {
+      "id": "cat_design",
+      "name": "设计资源",
+      "color": "#ec4899"
+    },
+    {
+      "id": "id_1779106234924_qxzw1ai6y",
+      "name": "AI大模型",
+      "color": "#a855f7"
+    },
+    {
+      "id": "cat_dev",
+      "name": "开发工具",
+      "color": "#6366f1"
+    },
+    {
+      "id": "id_1779106393865_5s7f74f6g",
+      "name": "VPN",
+      "color": "#8b5cf6"
+    },
+    {
+      "id": "id_1779106470559_dbax1usi8",
+      "name": "刷网课",
+      "color": "#10b981"
+    },
+    {
+      "id": "id_1779270632491_alprj73q1",
+      "name": "我开发的网站",
+      "color": "#3b82f6"
+    }
+  ],
+  "bookmarks": [
+    {
+      "id": "id_1779270648271_m1lb8dx6l",
+      "url": "https://c7d115jmu-juhua-cs25701kl.maozi.io/",
+      "title": "菊花",
+      "note": "",
+      "categoryId": "id_1779270632491_alprj73q1",
+      "createdAt": 1779270648271
+    },
+    {
+      "id": "id_1779266277072_6ygbphrav",
+      "url": "https://www.csdn.net/?spm=1018.2226.3001.4476",
+      "title": "CSDN",
+      "note": "专业开发社区",
+      "categoryId": "cat_dev",
+      "createdAt": 1779266277072
+    },
+    {
+      "id": "id_1779252359811_32nt5s4p5",
+      "url": "https://nmkpkzaiz-zhaopianchuli-cs25701kl.maozi.io/",
+      "title": "图片转化器",
+      "note": "",
+      "categoryId": "id_1779270632491_alprj73q1",
+      "createdAt": 1779252359811
+    },
+    {
+      "id": "id_1779106831505_4dra57ski",
+      "url": "http://www.cnki.net.czu.vpn358.com/",
+      "title": "中国知网",
+      "note": "池州学院入口",
+      "categoryId": "cat_learn",
+      "createdAt": 1779106831505
+    },
+    {
+      "id": "id_1779106728916_c10qak5a0",
+      "url": "https://dash.maoziyun.com/project/2037",
+      "title": "帽子云",
+      "note": "免费静态前端，GitHub仓库直导",
+      "categoryId": "cat_dev",
+      "createdAt": 1779106728916
+    },
+    {
+      "id": "id_1779106647201_armnb9h1j",
+      "url": "http://localhost:3000/",
+      "title": "懒人效率站-宣传页面",
+      "note": "",
+      "categoryId": "id_1779106527912_w0adbkuab",
+      "createdAt": 1779106647201
+    },
+    {
+      "id": "id_1779106612402_shu6x8rf1",
+      "url": "http://localhost:3000/app.html",
+      "title": "懒人效率站-用户端",
+      "note": "",
+      "categoryId": "id_1779106527912_w0adbkuab",
+      "createdAt": 1779106612402
+    },
+    {
+      "id": "id_1779106572493_0k1rr0t6r",
+      "url": "http://localhost:3000/rider.html",
+      "title": "懒人效率站-骑手端",
+      "note": "",
+      "categoryId": "id_1779106527912_w0adbkuab",
+      "createdAt": 1779106572493
+    },
+    {
+      "id": "id_1779106550495_4ifwyx44g",
+      "url": "http://localhost:3000/admin.html",
+      "title": "懒人效率站-后台管理",
+      "note": "",
+      "categoryId": "id_1779106527912_w0adbkuab",
+      "createdAt": 1779106550495
+    },
+    {
+      "id": "id_1779106482328_jpsgjg6nj",
+      "url": "http://b.mixuelo.cc/index/login",
+      "title": "冰城",
+      "note": "",
+      "categoryId": "id_1779106470559_dbax1usi8",
+      "createdAt": 1779106482328
+    },
+    {
+      "id": "id_1779106411938_frejrkz55",
+      "url": "https://ikuuu.nl/user",
+      "title": "ikuuu-VPN",
+      "note": "",
+      "categoryId": "id_1779106393865_5s7f74f6g",
+      "createdAt": 1779106411938
+    },
+    {
+      "id": "id_1779106363556_pxkyo3zsi",
+      "url": "https://chat.deepseek.com/",
+      "title": "DeepSeek",
+      "note": "",
+      "categoryId": "id_1779106234924_qxzw1ai6y",
+      "createdAt": 1779106363556
+    },
+    {
+      "id": "id_1779106323762_d6vxx0g6b",
+      "url": "https://www.doubao.com/chat/?channel=bing_sem&source=dbweb_sem_xhs_pinp_hexin_hexin_hexin_ocpc_zhuc_6&ad_platform_id=Microsoft_NoClick&ug_semver=&aid=188283372&cid=253746379&keywordid=76554029546629&Campaign=%E7%BD%91%E9%A1%B5%E7%89%88-%E5%93%81%E7%89%8C%E8%AF%8D-%E5%9C%A8%E7%BA%BF%2F%E7%BD%91%E9%A1%B5%E7%89%88-TCPA&AdGroup=%E5%93%81%E7%89%8C%E8%AF%8D-%E5%9C%A8%E7%BA%BF%2FTCPA&CampaignId=487327749&AdGroupId=1224857273636976&MatchType=e&AdId=76553723541490&keyword=,%E8%B1%86%E5%8C%85&msclkid=bceba8a9e5061b563b4dc2a2e703ca98&BidMatchType=be",
+      "title": "豆包",
+      "note": "",
+      "categoryId": "id_1779106234924_qxzw1ai6y",
+      "createdAt": 1779106323762
+    },
+    {
+      "id": "id_1779106301142_s59mzjw05",
+      "url": "https://chatglm.cn/main/alltoolsdetail?redirect=/main/alltoolsdetail&lang=zh",
+      "title": "智谱清言",
+      "note": "",
+      "categoryId": "id_1779106234924_qxzw1ai6y",
+      "createdAt": 1779106301142
+    },
+    {
+      "id": "id_1779106251395_ei4u58pz1",
+      "url": "https://yiyan.baidu.com/",
+      "title": "文心一言",
+      "note": "",
+      "categoryId": "id_1779106234924_qxzw1ai6y",
+      "createdAt": 1779106251395
+    },
+    {
+      "id": "id_1779106213481_ldmtad4hz",
+      "url": "https://www.officeplus.cn/",
+      "title": "PPT模板",
+      "note": "",
+      "categoryId": "cat_design",
+      "createdAt": 1779106213481
+    },
+    {
+      "id": "id_1779106189865_ihwgjqprz",
+      "url": "https://www.tukuppt.com/",
+      "title": "熊猫办公",
+      "note": "",
+      "categoryId": "cat_design",
+      "createdAt": 1779106189865
+    },
+    {
+      "id": "id_1779106144940_60pi355w2",
+      "url": "https://www.tiktok.com/",
+      "title": "TikTok",
+      "note": "",
+      "categoryId": "cat_entertain",
+      "createdAt": 1779106144940
+    },
+    {
+      "id": "id_1779106083889_maoigzzza",
+      "url": "https://www.iyf.tv/",
+      "title": "爱壹帆",
+      "note": "",
+      "categoryId": "cat_entertain",
+      "createdAt": 1779106083889
+    },
+    {
+      "id": "id_1779106020665_1quceijtj",
+      "url": "https://www.douyin.com/",
+      "title": "抖音",
+      "note": "",
+      "categoryId": "cat_entertain",
+      "createdAt": 1779106020665
+    },
+    {
+      "id": "id_1779105971030_pfc48m7ha",
+      "url": "https://www.icourse163.org/",
+      "title": "大学MOOC",
+      "note": "",
+      "categoryId": "cat_learn",
+      "createdAt": 1779105971030
+    },
+    {
+      "id": "id_1779105937229_7g2j5k47q",
+      "url": "https://i.chaoxing.com/base?ws=1&t=1779105920189",
+      "title": "学习通",
+      "note": "",
+      "categoryId": "cat_learn",
+      "createdAt": 1779105937229
+    },
+    {
+      "id": "bm10",
+      "title": "Google",
+      "url": "https://www.google.com",
+      "note": "搜索引擎",
+      "categoryId": "cat_dev",
+      "createdAt": 1779019315097
+    },
+    {
+      "id": "bm9",
+      "title": "YouTube",
+      "url": "https://www.youtube.com",
+      "note": "视频平台",
+      "categoryId": "cat_entertain",
+      "createdAt": 1778846515097
+    },
+    {
+      "id": "bm8",
+      "title": "Twitter",
+      "url": "https://twitter.com",
+      "note": "社交媒体",
+      "categoryId": "cat_social",
+      "createdAt": 1778587315097
+    },
+    {
+      "id": "bm7",
+      "title": "掘金",
+      "url": "https://juejin.cn",
+      "note": "中文技术社区",
+      "categoryId": "cat_dev",
+      "createdAt": 1778414515097
+    },
+    {
+      "id": "bm6",
+      "title": "Coursera",
+      "url": "https://www.coursera.org",
+      "note": "在线课程",
+      "categoryId": "cat_learn",
+      "createdAt": 1778068915097
+    },
+    {
+      "id": "bm5",
+      "title": "Figma",
+      "url": "https://www.figma.com",
+      "note": "协作设计",
+      "categoryId": "cat_design",
+      "createdAt": 1777809715097
+    },
+    {
+      "id": "bm4",
+      "title": "Dribbble",
+      "url": "https://dribbble.com",
+      "note": "设计展示",
+      "categoryId": "cat_design",
+      "createdAt": 1777550515097
+    },
+    {
+      "id": "bm3",
+      "title": "MDN",
+      "url": "https://developer.mozilla.org",
+      "note": "Web文档",
+      "categoryId": "cat_dev",
+      "createdAt": 1777377715097
+    },
+    {
+      "id": "bm2",
+      "title": "Stack Overflow",
+      "url": "https://stackoverflow.com",
+      "note": "问答社区",
+      "categoryId": "cat_dev",
+      "createdAt": 1776945715097
+    },
+    {
+      "id": "bm1",
+      "title": "GitHub",
+      "url": "https://github.com",
+      "note": "代码托管平台",
+      "categoryId": "cat_dev",
+      "createdAt": 1776513715097
+    }
+  ],
+  "exportDate": "2026-05-20T09:51:03.235Z"
+}
