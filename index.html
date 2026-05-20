@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📑 网址收藏管理器 · 云端同步版</title>
+    <title>📑 网址收藏管理器 · 自动云端同步</title>
     <style>
         :root {
             --bg: #f0f2f5;
@@ -411,16 +411,16 @@
         .toast.error { border-left: 3px solid #ef4444; }
 
         .sync-hint {
-            background: #fef9e3;
-            border-left: 4px solid #eab308;
+            background: #e6f7e6;
+            border-left: 4px solid #22c55e;
             padding: 10px 14px;
             font-size: 0.8rem;
             border-radius: 8px;
             margin-bottom: 12px;
-            color: #92400e;
+            color: #2e7d32;
         }
         .sync-hint code {
-            background: #fff1cf;
+            background: #c8e6c9;
             padding: 2px 6px;
             border-radius: 5px;
             font-size: 0.75rem;
@@ -449,7 +449,7 @@
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <div class="sidebar-logo"><div class="logo-icon">📑</div>收藏管理器</div>
-            <div class="sidebar-subtitle">云端同步·手动回写</div>
+            <div class="sidebar-subtitle">自动同步 · 无需导入</div>
         </div>
         <nav class="sidebar-nav" id="sidebarNav"></nav>
         <div class="sidebar-footer">
@@ -479,7 +479,7 @@
         </div>
         <div class="content-area">
             <div class="sync-hint" id="syncHint">
-                💡 当前数据来自 GitHub 上的 <code>bookmarks.json</code>。修改后请点击「导出备份」，然后在 GitHub 仓库中手动上传覆盖该文件。
+                ✅ 已开启自动同步：每次打开页面都会自动读取 GitHub 上的 <code>bookmarks.json</code>，无需手动导入。
             </div>
             <div class="section-header">
                 <div class="section-title">
@@ -522,9 +522,8 @@
 
 <script>
     (function() {
-        // ======================== 配置区域 ========================
-        // ★★★ 请修改为你的 GitHub raw 文件地址 ★★★
-        const REMOTE_JSON_URL = 'https://raw.githubusercontent.com/你的用户名/你的仓库名/main/bookmarks.json';
+        // ======================== 已配置好 GitHub API 地址，无需修改 ========================
+        const REMOTE_JSON_URL = 'https://api.github.com/repos/candy-happy/mybookmark/contents/bookmarks.json';
         // ========================================================
 
         const STORAGE_KEY_BOOKMARKS = 'bm_bookmarks';
@@ -561,12 +560,10 @@
             } catch(e) { showToast('存储空间不足','error'); }
         }
 
-        // 智能格式适配：支持标准格式 {categories, bookmarks} 或 纯书签数组
         function adaptRemoteData(raw) {
             if (raw.categories && raw.bookmarks) {
                 return { categories: raw.categories, bookmarks: raw.bookmarks };
             }
-            // 如果 raw 是一个数组，将其视为书签列表（无分类）
             if (Array.isArray(raw)) {
                 const defaultCat = { id: DEFAULT_CATEGORY_ID, name: '未分类', color: '#9ca3af', isDefault: true };
                 const adaptedBookmarks = raw.map(item => ({
@@ -579,27 +576,25 @@
                 }));
                 return { categories: [defaultCat], bookmarks: adaptedBookmarks };
             }
-            // 如果 raw 是一个对象但不是标准格式，尝试提取 bookmarks 字段或直接作为书签对象
             if (raw.bookmarks) {
                 return { categories: categories.length ? categories : [{ id: DEFAULT_CATEGORY_ID, name: '未分类', color: '#9ca3af', isDefault: true }], bookmarks: raw.bookmarks };
             }
             throw new Error('无法识别的远程数据格式');
         }
 
-        // 从 GitHub 加载远程数据
         async function loadRemoteData() {
             try {
                 const response = await fetch(REMOTE_JSON_URL, { cache: 'no-cache' });
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                const raw = await response.json();
+                const data = await response.json();
+                const content = atob(data.content);
+                const raw = JSON.parse(content);
                 const adapted = adaptRemoteData(raw);
                 categories = adapted.categories;
                 bookmarks = adapted.bookmarks;
-                // 确保默认分类存在
                 if (!categories.find(c => c.id === DEFAULT_CATEGORY_ID)) {
                     categories.unshift({ id: DEFAULT_CATEGORY_ID, name: '未分类', color: '#9ca3af', isDefault: true });
                 }
-                // 修正无效的分类ID
                 const validIds = new Set(categories.map(c => c.id));
                 let changed = false;
                 bookmarks.forEach(b => {
@@ -609,32 +604,28 @@
                     }
                 });
                 if (changed) saveData();
-                showToast('✅ 已从 GitHub 同步最新书签', 'success');
+                showToast('✅ 已自动同步 GitHub 最新书签', 'success');
                 return true;
             } catch (err) {
-                console.warn('远程加载失败:', err);
-                showToast('⚠️ 无法连接远程备份，使用本地缓存', 'error');
+                console.warn('自动同步失败:', err);
+                showToast('⚠️ 自动同步失败，使用本地缓存数据', 'error');
                 return false;
             }
         }
 
         async function loadData() {
-            // 先尝试从 GitHub 获取
             const remoteOk = await loadRemoteData();
             if (!remoteOk) {
-                // 回退到 localStorage
                 const savedCat = localStorage.getItem(STORAGE_KEY_CATEGORIES);
                 const savedBm = localStorage.getItem(STORAGE_KEY_BOOKMARKS);
                 if (savedCat && savedBm) {
                     categories = JSON.parse(savedCat);
                     bookmarks = JSON.parse(savedBm);
                 } else {
-                    // 极简默认数据
                     categories = [{ id: DEFAULT_CATEGORY_ID, name: '未分类', color: '#9ca3af', isDefault: true }];
                     bookmarks = [];
                 }
             }
-            // 二次确保默认分类存在
             if (!categories.find(c => c.id === DEFAULT_CATEGORY_ID)) {
                 categories.unshift({ id: DEFAULT_CATEGORY_ID, name: '未分类', color: '#9ca3af', isDefault: true });
             }
@@ -952,7 +943,7 @@
         });
 
         async function init() {
-            await loadData();   // 异步加载远程数据
+            await loadData();
             renderAll();
             if(window.innerWidth>900) setTimeout(()=>$searchInput.focus(),300);
         }
